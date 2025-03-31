@@ -22,11 +22,14 @@ Once the payment gets enough **confirmations** (blocks mined after it), it's fin
 
 Third-party APIs simplify Bitcoin payments by handling transactions while you focus on integration. Some popular APIs include:  
 
-- **Explorer.cash** (non-custodial, direct-to-wallet payments)  
-- **Blockstream.info** (blockchain data and transaction monitoring)  
-- **NowPayments** (merchant-focused, supports fiat conversion)  
-- **CoinGate** (supports multiple cryptocurrencies)  
-- **BitcoinAverage** (market data and exchange rate APIs)  
+- **Bitnob** Offers Bitcoin payments, Lightning Network transactions, and fiat on/off-ramps
+- **Explorer.cash** Direct Bitcoin payments without custody.
+- **Lightspark** Lightning Network API for instant Bitcoin transactions.
+- **ZeroHash** Institutional-grade Bitcoin payment APIs.  
+- **Blockstream.info** Invoice tracking and payment notifications for Bitcoin 
+- **NowPayments** Merchant-focused, supports fiat conversion 
+- **CoinGate** Supports multiple cryptocurrencies 
+- **BitcoinAverage** Market data and exchange rate APIs 
 
 These services let you receive payments without running a full node.  
 
