@@ -1,4 +1,4 @@
-# reviews
+
 
 # **Accepting Bitcoin Payments Without BTCPay Server: A Developer’s Guide**  
 
