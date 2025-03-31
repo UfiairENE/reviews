@@ -20,9 +20,18 @@ Once the payment gets enough **confirmations** (blocks mined after it), it's fin
 
 ## **Method 1: Using Third-Party APIs**  
 
-Third-party APIs simplify Bitcoin payments by handling transactions while you focus on integration. APIs like **Explorer.cash** allow payments to go directly to your wallet without setting up infrastructure.  
+Third-party APIs simplify Bitcoin payments by handling transactions while you focus on integration. Some popular APIs include:  
+
+- **Explorer.cash** (non-custodial, direct-to-wallet payments)  
+- **Blockstream.info** (blockchain data and transaction monitoring)  
+- **NowPayments** (merchant-focused, supports fiat conversion)  
+- **CoinGate** (supports multiple cryptocurrencies)  
+- **BitcoinAverage** (market data and exchange rate APIs)  
+
+These services let you receive payments without running a full node.  
 
 ### **Step 1: Install the API Library**  
+Using **Explorer.cash** as an example:  
 ```sh
 composer require explorer-cash/api-php
 ```  
@@ -127,6 +136,6 @@ Instead of manually checking, webhooks notify you when a payment is received.
 
 ## **Conclusion**  
 
-Accepting Bitcoin payments doesn’t have to be complicated. Whether you use a third-party API like **Explorer.cash** or track transactions directly, both methods eliminate the need for a full BTCPay Server setup. You gain flexibility, control, and a simple way to integrate Bitcoin into your website.  
+Accepting Bitcoin payments doesn’t have to be complicated. Whether you use a third-party API like **Explorer.cash**, **Blockstream.info**, or **NowPayments**, or track transactions directly, both methods eliminate the need for a full BTCPay Server setup. You gain flexibility, control, and a simple way to integrate Bitcoin into your website.  
 
 Want full autonomy? Use **direct blockchain tracking**. Need a quick setup? **Third-party APIs** handle the heavy lifting. Either way, you’re now equipped to accept Bitcoin payments without unnecessary infrastructure.
