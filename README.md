@@ -137,6 +137,57 @@ Instead of manually checking, webhooks notify you when a payment is received.
 
 ---
 
+## HD Wallet Implementation
+
+### Required Imports
+```php
+use BitWasp\Bitcoin\Address\PayToPubKeyHashAddress;
+use BitWasp\Bitcoin\Address\SegwitAddress;
+use BitWasp\Bitcoin\Bitcoin;
+use BitWasp\Bitcoin\Key\Factory\HierarchicalKeyFactory;
+use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
+use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
+use BitWasp\Bitcoin\Network\NetworkFactory;
+```
+
+### Wallet Initialization
+```php
+function initializeWallet() {
+    $bip39 = MnemonicFactory::bip39();
+    $mnemonic = $bip39->create(128); // 12 words
+    
+    $seedGenerator = new Bip39SeedGenerator();
+    $seed = $seedGenerator->getSeed($mnemonic);
+    
+    $hierarchicalKeyFactory = new HierarchicalKeyFactory();
+    $masterKey = $hierarchicalKeyFactory->fromEntropy($seed);
+    
+    return $masterKey;
+}
+```
+
+### Address Generation
+```php
+function generateBitcoinAddress($accountIndex = 0, $addressIndex = null, $masterKey, $network) {
+    if ($addressIndex === null) {
+        $addressIndex = mt_rand(0, 2147483647);
+    }
+
+    $path = "84'/0'/{$accountIndex}'/0/{$addressIndex}";
+    $childKey = $masterKey->derivePath($path);
+    $publicKey = $childKey->getPublicKey();
+    
+    $witnessProgram = WitnessProgram::v0($publicKey->getPubKeyHash());
+    $address = new SegwitAddress($witnessProgram);
+
+    return [
+        'address' => $address->getAddress($network),
+        'path' => $path,
+        'index' => $addressIndex
+    ];
+}
+```
+
 ## **Conclusion**  
 
 Accepting Bitcoin payments doesn’t have to be complicated. Whether you use a third-party API like **Explorer.cash**, **Blockstream.info**, or **NowPayments**, or track transactions directly, both methods eliminate the need for a full BTCPay Server setup. You gain flexibility, control, and a simple way to integrate Bitcoin into your website.  
