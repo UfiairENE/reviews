@@ -152,8 +152,7 @@ use BitWasp\Bitcoin\Key\Factory\HierarchicalKeyFactory;
 use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
 use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
 use BitWasp\Bitcoin\Network\NetworkFactory;
-use
-BitWasp\Bitcoin\Script\WitnessProgram; 
+
 ```
 
 ### Wallet Initialization
