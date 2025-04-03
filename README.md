@@ -142,6 +142,7 @@ Instead of manually checking, webhooks notify you when a payment is received.
 ### Why HD Wallets?
 
 HD (Hierarchical Deterministic) wallets allow you to generate multiple Bitcoin addresses from a single master key. This means you don’t need to store individual private keys for each address, improving security and manageability. With an HD wallet, the generation of each Bitcoin address is deterministic, ensuring that you can recreate the exact wallet from the master seed phrase at any time.
+It is important to note that this is mainly used to manage regular Bitcoin transactions (on-chain transactions)
 
 ### Required Imports
 ```php
