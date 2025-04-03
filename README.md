@@ -139,6 +139,10 @@ Instead of manually checking, webhooks notify you when a payment is received.
 
 ## HD Wallet Implementation
 
+### Why HD Wallets?
+
+HD (Hierarchical Deterministic) wallets allow you to generate multiple Bitcoin addresses from a single master key. This means you don’t need to store individual private keys for each address, improving security and manageability. With an HD wallet, the generation of each Bitcoin address is deterministic, ensuring that you can recreate the exact wallet from the master seed phrase at any time.
+
 ### Required Imports
 ```php
 use BitWasp\Bitcoin\Address\PayToPubKeyHashAddress;
@@ -148,6 +152,8 @@ use BitWasp\Bitcoin\Key\Factory\HierarchicalKeyFactory;
 use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
 use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
 use BitWasp\Bitcoin\Network\NetworkFactory;
+use
+BitWasp\Bitcoin\Script\WitnessProgram; 
 ```
 
 ### Wallet Initialization
